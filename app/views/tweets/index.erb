@@ -13,6 +13,7 @@
       <% @user = User.find_by_id(tweet.user_id) %>
       <em> <%= @user.username %> </em>
             <li><%= tweet.content %></li><br>
+            <a href="/tweets/<%= tweet.id %>/edit">edit this tweet</a>
       <% end %>
     </ul>
     <a href="/logout">Logout</a>
