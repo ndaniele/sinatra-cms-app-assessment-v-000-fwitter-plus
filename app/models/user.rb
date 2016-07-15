@@ -1,6 +1,9 @@
-class User < ActiveRecord::Base
+#require_relative '../helper_methods/support_module'
 
+class User < ActiveRecord::Base
+#include Slugs
   has_many :tweets
+  has_many :types, through: :tweets
 
   has_secure_password
 

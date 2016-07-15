@@ -12,8 +12,9 @@
       <% @tweets.each do |tweet| %>
       <% @user = User.find_by_id(tweet.user_id) %>
       <em> <%= @user.username %> </em>
-            <li><%= tweet.content %></li><br>
+            <li><%= tweet.content %></li>
             <a href="/tweets/<%= tweet.id %>/edit">edit this tweet</a>
+            <br></br>
       <% end %>
     </ul>
     <a href="/logout">Logout</a>

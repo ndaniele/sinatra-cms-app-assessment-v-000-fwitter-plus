@@ -1,0 +1,4 @@
+<h1><%= @type.name %></h1>
+<% @tweets.each do |tweet| %>
+  <a href="/tweets/<%= tweet.id %>"><%= tweet.name %></a>
+  <% end %>
