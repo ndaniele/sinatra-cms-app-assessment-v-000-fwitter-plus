@@ -17,7 +17,6 @@ class TweetsController < ApplicationController
     if session[:user_id]
       erb :'/tweets/new'
     else
-      flash[:message] = "can't create a blank tweet."
       redirect to '/login'
     end
   end
@@ -34,6 +33,7 @@ class TweetsController < ApplicationController
       @tweet.save
       redirect to "/tweets/#{@tweet.id}"
     else
+      flash[:message] = "can't create a blank tweet."
       redirect '/tweets/new'
     end
   end
