@@ -1,4 +1,6 @@
+require 'rack-flash'
 class TweetsController < ApplicationController
+  use Rack::Flash
 
   get '/tweets' do
     if session[:user_id]
@@ -15,6 +17,7 @@ class TweetsController < ApplicationController
     if session[:user_id]
       erb :'/tweets/new'
     else
+      flash[:message] = "can't create a blank tweet."
       redirect to '/login'
     end
   end
