@@ -14,10 +14,8 @@
       <% end %>
 
       <br>
-      <form action="/tweets/<%= @tweet.id %>/edit" method="post">
-        <input type="hidden" name="_method" value="patch" id="hidden">
-        <input type="submit" value="Edit Tweet">
-      </form><br>
+      <a href="/tweets/<%=@tweet.id%>/edit">edit tweet</a>
+      
       <form action="/tweets/<%= @tweet.id %>/delete" method="post">
         <input type="hidden" name="_method" value="patch" id="hidden">
         <input type="submit" value="Delete Tweet">
