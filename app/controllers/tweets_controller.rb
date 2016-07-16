@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
   get '/tweets' do
     if session[:user_id]
-      @user = User.find_by(id: session[:user_id])
+      @user = User.find(session[:user_id])
       @tweets = Tweet.all
       erb :'/tweets/index'
  #binding.pry

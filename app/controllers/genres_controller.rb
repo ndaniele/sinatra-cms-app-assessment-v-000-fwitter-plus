@@ -1,4 +1,4 @@
-class GenreController < ApplicationController
+class GenresController < ApplicationController
 
  get '/genre' do
     @all_genres = Genre.all
