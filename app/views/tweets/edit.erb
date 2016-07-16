@@ -11,6 +11,17 @@
         <br>
         Edit Content:<input type="textarea" name="content" value="<%= @tweet.content %>" id="content">
         <br>
+
+      <%Type.all.each do |type|%>
+      <input type="checkbox" name="tweet[type_ids][]" value="<%=type.id%>" id="type_<%=type.id%>"><%=type.name%></input>
+      <%end%>
+      <br></br>
+
+      <label></label>and/or, create a new Type:</label>
+      <br></br>
+      <label>Type:</label>
+        <input  type="text" name="type[name]" id="new_type"></input>
+      <br></br>
         <br>
         <input type="submit" value="submit">
       <br>

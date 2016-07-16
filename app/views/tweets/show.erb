@@ -7,7 +7,8 @@
   <body>
     <h1>Welcome, <%= @user.username %></h1>
 
-      <li><%= @tweet.content %></li>
+      <li>Content:<%= @tweet.content %></li>
+      <li>Type:<%= @tweet.type %></li>
       <br>
       <form action="/tweets/<%= @tweet.id %>/edit" method="post">
         <input type="hidden" name="_method" value="patch" id="hidden">

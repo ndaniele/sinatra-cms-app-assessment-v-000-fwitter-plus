@@ -9,13 +9,12 @@
     <h4>All Tweets: </h4>
     <a href="/tweets/new">Make A New Tweet!</a>
     <ul>
-      <% @tweets.each do |tweet| %>
-      <% @user = User.find_by_id(tweet.user_id) %>
-      <em> <%= @user.username %> </em>
-            <li><%= tweet.content %></li>
-            <a href="/tweets/<%= tweet.id %>/edit">edit this tweet</a>
-            <br></br>
-      <% end %>
+     <% @tweets.each do |tweet| %>
+     <em> <%= @user.username %> </em>
+           <li><%= tweet.content %></li>
+           <a href="/tweets/<%= tweet.id %>/edit">edit this tweet</a>
+           <br></br>
+     <% end %>
     </ul>
     <a href="/logout">Logout</a>
   </body>
