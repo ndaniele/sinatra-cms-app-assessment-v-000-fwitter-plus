@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716165721) do
+ActiveRecord::Schema.define(version: 20160716183109) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -19,12 +19,11 @@ ActiveRecord::Schema.define(version: 20160716165721) do
 
   create_table "tweet_genres", force: :cascade do |t|
     t.integer "tweet_id"
-    t.integer "user_id"
+    t.integer "genre_id"
   end
 
   create_table "tweets", force: :cascade do |t|
     t.string  "content"
-    t.string  "genre"
     t.integer "user_id"
   end
 

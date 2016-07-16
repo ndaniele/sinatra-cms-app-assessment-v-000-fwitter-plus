@@ -24,7 +24,7 @@ class TweetsController < ApplicationController
       @tweet = Tweet.create(content: params["content"])
       @user = User.find_by(id: session[:user_id])
       @genre = Genre.create(name: params[:name])
-      @tweet.genre = @genre
+      @tweet.genres = @genre
       @tweet.user_id = @user.id
       @tweet.save
       redirect to "/tweets/#{@tweet.id}"
@@ -36,11 +36,12 @@ class TweetsController < ApplicationController
    get '/tweets/:id' do
     if session[:user_id]
       @user = User.find_by(id: session[:user_id])
-      @tweet = Tweet.find_by_id(params["id"])
+      @tweet = Tweet.find_by_id(params["id"]) 
       erb :'/tweets/show'
     else
       redirect to '/login'
     end
+    binding.pry
   end
 
   get '/tweets/:id/edit' do
