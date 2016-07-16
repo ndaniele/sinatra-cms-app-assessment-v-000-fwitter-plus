@@ -23,8 +23,10 @@ class TweetsController < ApplicationController
     if !params["content"].empty?
       @tweet = Tweet.create(content: params["content"])
       @user = User.find_by(id: session[:user_id])
-      @genre = Genre.create(name: params[:name])
-      @tweet.genres = @genre
+      @tweet.genres.build(name: params["genre"]["name"])
+      #binding.pry
+      #@genre = Genre.create(name: params[:name])
+      #@tweet.genres = @genre
       @tweet.user_id = @user.id
       @tweet.save
       redirect to "/tweets/#{@tweet.id}"
@@ -41,7 +43,7 @@ class TweetsController < ApplicationController
     else
       redirect to '/login'
     end
-    binding.pry
+    #binding.pry
   end
 
   get '/tweets/:id/edit' do

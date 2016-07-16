@@ -8,7 +8,11 @@
     <h1>Welcome, <%= @user.username %></h1>
 
       <li>Content:<%= @tweet.content %></li>
-      <li>Genre of Tweet:<%= @tweet.genre %></li>
+
+      <% @tweet.genres.each do |genre| %>
+    <li>Genre of Tweet:<%= genre.name %></li>
+      <% end %>
+
       <br>
       <form action="/tweets/<%= @tweet.id %>/edit" method="post">
         <input type="hidden" name="_method" value="patch" id="hidden">
