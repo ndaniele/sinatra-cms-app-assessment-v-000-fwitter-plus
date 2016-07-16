@@ -3,7 +3,7 @@
 class User < ActiveRecord::Base
 #include Slugs
   has_many :tweets
-  has_many :types, through: :tweets
+  has_many :genres, through: :tweets
 
   has_secure_password
 
